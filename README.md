@@ -1,14 +1,17 @@
 # Sinatra To Rails Pick 1 Of 3 
  
-##Learning Competencies 
+##Learning Competencies
+- Identify the differences between Sinatra and Rails.
+- Implement a solved problem (something that you've solved/done before) in different frameworks.
+- Familiarity with Rails moving parts and the 'Rails way'.
 
 ##Summary 
 
  Pick one of the following three Sinatra-based challenges and build it in Rails:
 
-1. [Craigslist, Jr.](/challenges/275)
-2. [Sinatra URL Shortener](/challenges/276)
-3. [Hacker News Clone](/challenges/301)
+1. [Craigslist, Jr.](https://github.com/Devbootcamp/craigslist-jr-challenge)
+2. [Sinatra URL Shortener](https://github.com/Devbootcamp/sinatra-url-shortener-challenge)
+3. [Hacker News Clone](https://github.com/Devbootcamp/hacker-news-clone-part-1-challenge)
 
 Focus first and foremost on doing things the "Rails way."  Rails' idiomatic style can be frustrating coming from simpler, more explicit frameworks like Sinatra, but the sooner you [grok](http://en.wikipedia.org/wiki/Grok) how Rails sees the world the more productive you'll be.
 
@@ -18,8 +21,8 @@ If you need a specific area to focus on, [Rails form helpers](http://guides.ruby
  
 
 ##Releases
-###Release 0 
-
+Use the same release structure from the Sinatra project you choose.
 ##Optimize Your Learning 
-
+Make sure you understand every line of code you're writing. Don't copy and paste.
 ##Resources
+[Sinatra to Rails](https://gist.github.com/keithtom/2956bfa3c603e21e6b6c)
