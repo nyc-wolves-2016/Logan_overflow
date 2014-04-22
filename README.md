@@ -9,9 +9,9 @@
 
  Pick one of the following three Sinatra-based challenges and build it in Rails:
 
-1. [Craigslist, Jr.](https://github.com/Devbootcamp/craigslist-jr-challenge)
-2. [Sinatra URL Shortener](https://github.com/Devbootcamp/sinatra-url-shortener-challenge)
-3. [Hacker News Clone](https://github.com/Devbootcamp/hacker-news-clone-part-1-challenge)
+1. [Craigslist, Jr.](../../../craigslist-jr-challenge)
+2. [Sinatra URL Shortener](../../../sinatra-url-shortener-challenge)
+3. [Hacker News Clone](../../../hacker-news-clone-part-1-challenge)
 
 Focus first and foremost on doing things the "Rails way."  Rails' idiomatic style can be frustrating coming from simpler, more explicit frameworks like Sinatra, but the sooner you [grok](http://en.wikipedia.org/wiki/Grok) how Rails sees the world the more productive you'll be.
 
