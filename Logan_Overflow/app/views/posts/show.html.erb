@@ -12,6 +12,14 @@
 
 <h2><%= @post.answers.count %> Answers</h2>
   <%= render @post.answers %>
-<article class="answer">
 
+<h2>Answer the question:</h2>
+  <% if logged_in? %>
+    <%= render 'answers/form' %>
+  <% else %>
+    <p> Not logged in? Login <%= link_to 'here', '/login' %>.</p>
+  <% end %>
+<% if current_user == @post.user %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
 <%= link_to 'Back', posts_path %>

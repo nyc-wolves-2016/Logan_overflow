@@ -1,0 +1,8 @@
+<article class="answer">
+<p><strong><%= answer.user.username %></strong>:</p>
+<p> <%= answer.content %> </p>
+  <% if current_user == answer.user %>
+    <%= link_to 'Delete Answer', [answer.post, answer],
+  method: :delete %>
+  <% end %>
+</article>
