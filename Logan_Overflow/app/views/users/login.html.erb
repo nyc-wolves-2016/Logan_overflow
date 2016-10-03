@@ -1,0 +1,35 @@
+<%= form_for :user, url: login_user_path do |f| %>
+  <% if @user %>
+    <% if @user.errors.any? %>
+      <div class="container-errors">
+        <h2>
+          <%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:
+        </h2>
+        <ul class="list-errors">
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="list-item-error"> <%= msg %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
