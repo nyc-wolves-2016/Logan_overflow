@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :comments
     end
   end
+
+  resources :sessions, except: [:index, :edit, :update]
 end
