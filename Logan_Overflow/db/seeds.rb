@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+20.times do
+  user = User.create( username: Faker::Internet.user_name,
+                      email: Faker::Internet.safe_email,
+                      password: '123'
+                      )
+end
+
+40.times do
+ post = Post.create( title: Faker::Company.catch_phrase,
+                     content: Faker::Lorem.paragraph,
+                     user: rand(1..20)
+                     )
+end
+
+100.times do
+  answer = Answer.create( user_id: rand(1..20),
+                          post_id: rand(1..40),
+                          text: Faker::Hipster.sentence
+                          )
+end
