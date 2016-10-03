@@ -14,8 +14,10 @@
   <%= render @post.answers %>
 
 <h2>Answer the question:</h2>
-  <% if logged_in? %>
+  <% if logged_in? && current_user != @post.user %>
     <%= render 'answers/form' %>
+  <% elsif logged_in? && current_user == @post.user %>
+   <p> Check out the answers! </p>
   <% else %>
     <p> Not logged in? Login <%= link_to 'here', '/login' %>.</p>
   <% end %>

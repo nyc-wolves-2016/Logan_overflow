@@ -2,6 +2,7 @@
 <p><strong><%= answer.user.username %></strong>:</p>
 <p> <%= answer.content %> </p>
   <% if current_user == answer.user %>
+    <%= link_to 'Edit', edit_post_answer_path(@post, answer) %>
     <%= link_to 'Delete Answer', [answer.post, answer],
   method: :delete %>
   <% end %>

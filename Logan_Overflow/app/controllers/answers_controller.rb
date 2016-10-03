@@ -1,4 +1,9 @@
 class AnswersController < ApplicationController
+  def edit
+    @post = Post.find(params[:post_id])
+    @answer = @post.answers.find(params[:id])
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @answer = @post.answers.new(answer_params)
@@ -11,6 +16,17 @@ class AnswersController < ApplicationController
       render post_path(@post)
     end
   end
+
+  def update
+    @post = Post.find(params[:post_id])
+    answer = Answer.find(params[:id])
+    if answer.update(answer_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
 
   def destroy
     @post = Post.find(params[:post_id])
