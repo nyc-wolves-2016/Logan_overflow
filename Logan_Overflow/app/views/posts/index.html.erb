@@ -1,15 +1,18 @@
-<h1>Posts</h1>
+<h1>Business OverFlow</h1>
 <div class="container-posts">
   <table>
     <tr>
-      <th>Question</th>
+      <th>Questions</th>
       <th colspan="2"></th>
     </tr>
 
     <% @posts.each do |post| %>
         <tr>
             <td><%= link_to "#{post.title}", post_path(post) %></td>
-            <td><%= link_to 'Edit', edit_post_path(post)%></td>
+              <% if current_user.id == post.user.id %>
+                <td><%= link_to 'Edit', edit_post_path(post)%></td>
+                <td><%= link_to 'Delete', post_path(post), method: :delete %></td>
+              <% end %>
         </tr>
     <% end %>
   </table>

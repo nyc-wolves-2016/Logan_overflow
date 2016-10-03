@@ -14,6 +14,9 @@
         <%if current_user %>
         <li class="list-item-nav"> <%= link_to "#{current_user.username}", session_path(current_user) %> </li>
         <li class="list-item-nav"> <%= link_to 'Logout', '/logout' %> </li>
+        <% else %>
+        <li class="list-item-nav"> <%= link_to 'Register', '/register' %> </li>
+        <li class="list-item-nav"> <%= link_to 'Login', '/login' %> </li>
         <% end %>
         <li class="list-item-nav"> <%= link_to 'Home', posts_path %> </li>
     <%= yield %>

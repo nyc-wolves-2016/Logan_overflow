@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'users#new'
+  get '/register' => 'users#new'
   post '/users' => 'users#create'
 end
