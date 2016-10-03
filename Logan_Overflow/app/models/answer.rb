@@ -4,6 +4,6 @@ class Answer < ApplicationRecord
   has_many :votes, as: :voteable
   has_many :comments, as: :commentable
 
-  validates :content
+  validates :content,
               presence: true
 end
