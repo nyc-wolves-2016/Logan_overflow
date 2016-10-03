@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <nav class=nav-'main'>
+      <ul class="list-nav">
+        <%if current_user %>
+        <li class="list-item-nav"> <%= link_to "#{current_user.username}", session_path(current_user) %> </li>
+        <li class="list-item-nav"> <%= link_to 'Logout', '/logout' %> </li>
+        <% end %>
+        <li class="list-item-nav"> <%= link_to 'Home', posts_path %> </li>
     <%= yield %>
   </body>
 </html>

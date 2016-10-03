@@ -3,18 +3,18 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @user = @current_user.id
+    @user = current_user
   end
 
   def create
-    user = User.find_by_email(params[:email])
-
-    if user && user.authenticate(params[:password])
-
-      session[:user_id] = user.id
-      redirect_to '/'
+    # binding.pry
+    @user = User.find_by_email(params[:sessions][:email])
+    if @user && @user.authenticate(params[:sessions][:password])
+      session[:user_id] = @user.id
+      redirect_to posts_path
     else
-      redirect_to new_session_path
+      redirect_to '/login'
+    end
   end
 
   def destroy
@@ -22,4 +22,8 @@ class SessionsController < ApplicationController
     redirect_to posts_path
   end
 
+  # private
+  #   def session_params
+  #     params.require(:session).permit(:username, :email, :password)
+  #   end
 end
