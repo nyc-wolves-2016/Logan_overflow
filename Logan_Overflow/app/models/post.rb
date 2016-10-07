@@ -10,30 +10,13 @@ class Post < ApplicationRecord
               presence: true
 
   def self.ordered_json
-    # includes("user").order("created_at DESC").limit(50).to_json
-    order("created_at DESC").as_json(include:
-                                      {user:
-                                        {only: :username},
-                                       comments:
-                                       {include:
-                                          {user:
-                                            {only: :username}
-                                          }
-                                        },
-                                       answers:
-                                        {include:
-                                           {user:
-                                             {only: :username},
-                                            comments:
-                                            {include:
-                                               {user:
-                                                 {only: :username}
-                                               }
-                                             }
-                                           }
+    order("created_at ASC").as_json(only: :title,
+                                     include:
+                                        {votes:
+                                          {only: :status}
                                         }
-                                      }
                                     )
+
   end
 
   def convert_json
