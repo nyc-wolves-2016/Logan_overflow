@@ -8,4 +8,20 @@ class Post < ApplicationRecord
             :content,
             :user,
               presence: true
+
+  def self.ordered_json
+    # includes("user").order("created_at DESC").limit(50).to_json
+    order("created_at DESC").as_json(include:
+                                {user:
+                                  {only: :username},
+                                 answers:
+                                  {include:
+                                     {user:
+                                      {only: :username}
+                                     }
+                                  }
+                                }
+                              )
+  end
+
 end

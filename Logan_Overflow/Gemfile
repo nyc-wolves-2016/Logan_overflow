@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'jasmine-rails'
+  gem 'neatjson'
 end
 
 group :development do
