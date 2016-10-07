@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #register, login and logout routes
   resources :sessions, only: [:show]
+  get '/posts/display/:id' => 'posts#display'
   get '/posts/recent' => 'posts#recent'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

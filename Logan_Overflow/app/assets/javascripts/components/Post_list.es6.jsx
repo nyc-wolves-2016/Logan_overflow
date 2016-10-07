@@ -15,7 +15,6 @@ class PostList extends React.Component {
     }
   render() {
     let { posts } = this.state;
-    console.log(posts)
     return (
       <div className="container-posts">
         <h1>Questions</h1>
