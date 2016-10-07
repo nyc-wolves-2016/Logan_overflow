@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'posts#index'
+  get 'static/index'
+
+  get '/' => 'static#index'
+  root to: 'static#index'
 
   #register, login and logout routes
   resources :sessions, only: [:show]
