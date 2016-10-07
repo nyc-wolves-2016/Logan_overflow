@@ -10,12 +10,12 @@ class Post < ApplicationRecord
               presence: true
 
   def self.ordered_json
-    order("created_at ASC").as_json(only: :title,
-                                     include:
-                                        {votes:
-                                          {only: :status}
-                                        }
-                                    )
+    order("created_at ASC").as_json(include:
+                                    {votes:
+                                      {only: :status}
+                                    }
+                                  )
+                                    
 
   end
 

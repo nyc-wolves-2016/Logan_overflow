@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
   def index
-    Post.all.ordered_json
+  end
+  
+  def recent
+    posts = Post.all.ordered_json
+    render json: posts
   end
 
   def show
     @post = Post.find(params[:id])
   end
+
 
   def new
     @post = Post.new
