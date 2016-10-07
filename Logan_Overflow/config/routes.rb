@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   resources :posts do
-    resources :answers
+    resources :answers, except: [:index, :show]
   end
-  resources :comments, only: [:new, :edit, :create, :update, :destroy]
+  resources :comments, except: [:index, :show]
 
   #register, login and logout routes
   resources :sessions, only: [:show]
